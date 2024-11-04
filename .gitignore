@@ -1,0 +1,8 @@
+/.env
+/intros.json
+/*.mp3
+/*.m4a
+/*.exe
+
+/.idea
+/intros
