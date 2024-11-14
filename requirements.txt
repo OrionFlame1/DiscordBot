@@ -7,3 +7,6 @@ pyttsx3~=2.90
 pedalboard~=0.8.7
 mutagen~=1.45.1
 setuptools~=60.2.0
+yt-dlp
+ffmpeg
+guppy3

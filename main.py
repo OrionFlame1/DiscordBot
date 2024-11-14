@@ -62,7 +62,7 @@ def owner_status():
 async def on_ready():
     # await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for /dex "))
     await bot.load_extension("dex")
-    await bot.load_extension("tts")
+    # await bot.load_extension("tts") # package compatibility issue on linux (pedalboard)
     await bot.load_extension("Commands")
     print(f"{h.timestamp()} Bot Activated")
     await bot.change_presence(status=discord.Status.offline)
@@ -90,8 +90,6 @@ async def on_presence_update(before, after):
 async def join(ctx):
     voice = await prepare_bot(ctx)
 
-mem = hpy()
-print(mem.heap())
 bot.run(TOKEN)
 
 

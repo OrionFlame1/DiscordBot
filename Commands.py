@@ -80,14 +80,15 @@ async def stop(ctx):
 
 @commands.command()
 async def get_games(ctx):
+    placeholder = await ctx.send("Fetching games, please wait...")
     epic = h.getEpicGames()
     message = ""
     for game in epic["games"]:
         if game["free_now"]:
-            message += "** Free Now - [" + game["title"] + "](" + game["url"] + ")**\n"
+            message += "**Free Now - [" + game["title"] + "](" + game["url"] + ")**\n"
         else:
             message += "[" + game["title"] + "](<" + game["url"] + ">)\n"
-    await ctx.send(message)
+    await placeholder.edit(content=message)
 
 async def prepare_bot(ctx):
     channel = ctx.message.author.voice.channel
