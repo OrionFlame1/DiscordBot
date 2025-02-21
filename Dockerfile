@@ -27,7 +27,7 @@ RUN apt-get update -y && apt-get install --fix-missing
 RUN apt-get install -y google-chrome-stable --fix-missing
 RUN apt-get install libxi6 libgconf-2-4 -y
 
-ENV CHROMEDRIVER_VERSION 2.19
+ENV CHROMEDRIVER_VERSION 100.0.4896.20
 ENV CHROMEDRIVER_DIR /chromedriver
 RUN mkdir -p $CHROMEDRIVER_DIR
 
