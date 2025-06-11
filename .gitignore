@@ -1,8 +1,12 @@
-/.env
-/intros.json
+.env
 /*.mp3
 /*.m4a
 /*.exe
+*.json
+*.txt
 
 /.idea
 /intros
+
+__pycache__
+.venv

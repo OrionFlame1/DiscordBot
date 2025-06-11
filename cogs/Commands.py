@@ -13,6 +13,14 @@ class Commands(commands.Cog):
         self.start_time = time.time()
         self.queue = []
 
+    # reload command to reload all cogs
+    @commands.command()
+    async def reload(self, ctx):
+        for filename in os.listdir("./cogs"):
+            if filename.endswith(".py"):
+                await self.bot.reload_extension(f"cogs.{filename[:-3]}")
+        await ctx.send("All cogs reloaded successfully.")
+
     @commands.command()
     async def imperial(self, ctx):
         if ctx.message.author.id == 244542391111909377:
@@ -85,18 +93,6 @@ class Commands(commands.Cog):
     @commands.command()
     async def stop(self, ctx):
         await ctx.voice_client.stop()
-
-    @commands.command()
-    async def get_games(self, ctx):
-        placeholder = await ctx.send("Fetching games, please wait...")
-        epic = h.getEpicGames()
-        message = ""
-        for game in epic["games"]:
-            if game["free_now"]:
-                message += "**Free Now - [" + game["title"] + "](" + game["url"] + ")**\n"
-            else:
-                message += "[" + game["title"] + "](<" + game["url"] + ">)\n"
-        await placeholder.edit(content=message)
 
 async def prepare_bot(ctx):
     channel = ctx.message.author.voice.channel
