@@ -25,7 +25,7 @@ def getEpicGames():
                         if element["productSlug"]:
                             this_game_url += element["productSlug"]
                         else:
-                            this_game_url += element["urlSlug"]
+                            this_game_url += element["catalogNs"]["mappings"][0]["pageSlug"]
                         free_games.append({
                             "title": element["title"],
                             "url": this_game_url,
@@ -37,7 +37,7 @@ def getEpicGames():
                         if element["productSlug"]:
                             this_game_url += element["productSlug"]
                         else:
-                            this_game_url += element["urlSlug"]
+                            this_game_url += element["catalogNs"]["mappings"][0]["pageSlug"]
                         free_games.append({
                             "title": element["title"],
                             "url": this_game_url,
