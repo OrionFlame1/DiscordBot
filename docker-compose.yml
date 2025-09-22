@@ -1,0 +1,6 @@
+version: "3.12"
+services:
+  DiscordBot:
+    build: .
+    container_name: DiscordBot
+    restart: always
